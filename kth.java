@@ -1,0 +1,31 @@
+import java.util.*;
+class kth
+{
+	public static void main(String args[])
+	{
+		Scanner in = new Scanner(System.in);
+		int [] a = new int [5];
+		int temp=0;
+		for(int i=0;i<5;i++)
+		{
+			a[i]=in.nextInt();
+		}
+		
+		for(int i=0;i<4;i++)
+		{
+			for(int j=i+1;j<5;j++)
+			{
+				if(a[i]>a[j])
+				{
+					temp=a[i];
+					a[i]=a[j];
+					a[j]=temp;
+				}
+			}
+		}
+		System.out.print("Enter the Kth Position: ");
+		int k= in.nextInt();
+		System.out.println("The "+ k+" th"+" Smallest is: "+a[k-1]);
+		System.out.println("The "+ k+" th"+" Largest is: "+a[a.length-k]); 
+	}
+}
